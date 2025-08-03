@@ -1,7 +1,8 @@
-[gd_scene load_steps=67 format=3 uid="uid://cw2hj4mqasgqm"]
+[gd_scene load_steps=69 format=3 uid="uid://cw2hj4mqasgqm"]
 
 [ext_resource type="Texture2D" uid="uid://cjfv7khvkp4jc" path="res://Pixel Adventure 1/Free/Main Characters/Appearing (96x96).png" id="1_t53lx"]
 [ext_resource type="Texture2D" uid="uid://ea1gsola7cym" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_ws0vm"]
+[ext_resource type="Script" uid="uid://bps6vf5g5fvi4" path="res://scripts/character_body_2d.gd" id="1_yi2kj"]
 [ext_resource type="Texture2D" uid="uid://bciyqbvpcxj6r" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Hit (32x32).png" id="2_rhr3r"]
 [ext_resource type="Texture2D" uid="uid://bmktbe0j434jb" path="res://Pixel Adventure 1/Free/Main Characters/Desappearing (96x96).png" id="2_yi2kj"]
 [ext_resource type="Texture2D" uid="uid://cy58lldjdaenu" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Idle (32x32).png" id="3_t53lx"]
@@ -457,12 +458,25 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t53lx"]
+size = Vector2(20, 24)
+
+[node name="virtual" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_yi2kj")
+move = 200.0
+jump = -400.0
+run = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q3p54")
-animation = &"death"
+animation = &"run"
+frame = 4
+frame_progress = 0.589525
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_t53lx")
