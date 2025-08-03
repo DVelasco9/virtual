@@ -3,12 +3,15 @@ extends CharacterBody2D
 @export var move : float
 @export var jump : float 
 @export var run : float 
-
 @onready var animation = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right = true
 var running = false
+var max_health := 3
+var current_health := max_health
+var is_dead := false
+
 
 func _ready() -> void:
 	add_to_group("player")
