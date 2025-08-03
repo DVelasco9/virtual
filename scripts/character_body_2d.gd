@@ -11,12 +11,47 @@ var running = false
 var max_health := 3
 var current_health := max_health
 var is_dead := false
+var is_invulnerable := false
 
+func take_damage(amount : int):
+	if is_dead or is_invulnerable:
+		return
+	
+	
+	current_health -= amount 
+	current_health = clamp(current_health, 0, max_health)
+	
+	is_invulnerable = true
+	await get_tree().create_timer(1.0).timeout
+	is_invulnerable = false
+	
+	
+	if current_health == 0:
+		die()
+
+func die():
+	
+	if is_dead:
+		return
+	is_dead = true 
+	
+	print("el jugador ha muerto")
+	
+	animation.play("death")
+	$CollisionShape2D.disabled = true 
+	velocity = Vector2.ZERO
+	
+	await animation.animation_finished
+	print("Animación terminada")
+	get_tree().reload_current_scene()
 
 func _ready() -> void:
 	add_to_group("player")
+	
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	move_x()
 	estado()
 	djump(delta)
@@ -61,3 +96,7 @@ func update_anime():
 		animation.play("walk")
 	else:
 		animation.play("idle")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ubsi8mr538ep"]
+
+[ext_resource type="Script" uid="uid://d34mejeembk7t" path="res://scripts/area_2d.gd" id="1_1gm86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_823tg"]
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1gm86")
+hurt = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_823tg")
+debug_color = Color(0.849676, 0.000548498, 0.844632, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
