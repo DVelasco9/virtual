@@ -15,7 +15,6 @@ var is_invulnerable := false
 var spawning := true
 var knockback_time := 0.2  
 var knockback_timer := 0.0
-var last_checkpoint_position: Vector2
 
 
 func take_damage(amount : int, from_position):
