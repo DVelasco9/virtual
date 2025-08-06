@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/nivel_1.tscn")
 
 
 func _on_settings_pressed() -> void:

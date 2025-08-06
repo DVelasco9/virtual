@@ -299,7 +299,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqsd8")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 12.0
 }, {
@@ -470,7 +470,7 @@ run = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q3p54")
-animation = &"spawn"
+animation = &"hit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

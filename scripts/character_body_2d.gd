@@ -13,9 +13,12 @@ var current_health := max_health
 var is_dead := false
 var is_invulnerable := false
 var spawning := true
+var knockback_time := 0.2  
+var knockback_timer := 0.0
+var last_checkpoint_position: Vector2
 
 
-func take_damage(amount : int):
+func take_damage(amount : int, from_position):
 	if is_dead or is_invulnerable:
 		return
 	
@@ -24,12 +27,25 @@ func take_damage(amount : int):
 	current_health = clamp(current_health, 0, max_health)
 	
 	is_invulnerable = true
-	await get_tree().create_timer(1.0).timeout
+	
+	knockback(from_position)
+	
+	animation.play("hit")
+	
+	
+	await get_tree().create_timer(0.3).timeout
 	is_invulnerable = false
 	
+
 	
 	if current_health == 0:
 		die()
+
+func knockback(from_position: Vector2):
+	var direction = sign(global_position.x - from_position.x)
+	velocity.x = direction * 150
+	velocity.y = -200  
+	knockback_timer = knockback_time
 
 func die():
 	
@@ -45,7 +61,12 @@ func die():
 	
 	await animation.animation_finished
 	print("Animación terminada")
-	get_tree().reload_current_scene()
+	
+	get_tree().change_scene_to_file("res://scenes/muerte.tscn")
+
+
+
+
 
 func _ready() -> void:
 	add_to_group("player")
@@ -54,6 +75,20 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+	
+	if knockback_timer > 0:
+		knockback_timer -= delta
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		move_and_slide()
+		return
+	
+	if is_invulnerable and animation.animation == "hit":
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		move_and_slide()
+		return
+	
 	move_x()
 	estado()
 	djump(delta)
@@ -77,7 +112,7 @@ func estado():
 		running = false
 
 func djump(delta):
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -107,6 +142,8 @@ func respawn():
 	await animation.animation_finished
 	spawning = false
 	#$CollisionShape2D.disabled = false
+
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
