@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://djnroavoxb1k5"]
+[gd_scene load_steps=5 format=4 uid="uid://djnroavoxb1k5"]
 
 [ext_resource type="Texture2D" uid="uid://cg081eb66psp5" path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" id="1_birf2"]
 [ext_resource type="PackedScene" uid="uid://cw2hj4mqasgqm" path="res://scenes/character_body_2d.tscn" id="2_gwvgh"]
-[ext_resource type="PackedScene" uid="uid://ubsi8mr538ep" path="res://scenes/damage.tscn" id="3_gwvgh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hr2l"]
 texture = ExtResource("1_birf2")
@@ -166,6 +165,4 @@ tile_map_data = PackedByteArray("AADu/wEAAAAGAAAAAADv/wEAAAAHAAAAAADw/wEAAAAIAAA
 tile_set = SubResource("TileSet_gq86h")
 
 [node name="virtual" parent="." instance=ExtResource("2_gwvgh")]
-
-[node name="Area2D" parent="." instance=ExtResource("3_gwvgh")]
-position = Vector2(41, 4)
+position = Vector2(-223, -108)

@@ -12,6 +12,8 @@ var max_health := 3
 var current_health := max_health
 var is_dead := false
 var is_invulnerable := false
+var spawning := true
+
 
 func take_damage(amount : int):
 	if is_dead or is_invulnerable:
@@ -47,7 +49,7 @@ func die():
 
 func _ready() -> void:
 	add_to_group("player")
-	
+	respawn()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -58,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	flip()
 	update_anime()
 	move_and_slide()
+	
 
 func move_x():
 	var input_axis = Input.get_axis("left", "right")
@@ -97,6 +100,13 @@ func update_anime():
 	else:
 		animation.play("idle")
 
+func respawn():
+	spawning = true
+	animation.play("spawn", 2.0)
+	#$CollisionShape2D.disabled = true
+	await animation.animation_finished
+	spawning = false
+	#$CollisionShape2D.disabled = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

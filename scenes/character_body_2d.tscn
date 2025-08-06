@@ -9,34 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://de4i2csf1ssig" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Jump (32x32).png" id="4_yi2kj"]
 [ext_resource type="Texture2D" uid="uid://4f6utbpm5bya" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Run (32x32).png" id="5_cibgq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cibgq"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q3p54"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(96, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_86134"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fd7s8"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xnlan"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(384, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ehsx"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(480, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ph2st"]
-atlas = ExtResource("1_t53lx")
-region = Rect2(576, 0, 96, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ehx"]
 atlas = ExtResource("2_yi2kj")
 region = Rect2(0, 0, 96, 96)
@@ -193,6 +165,34 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("5_cibgq")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cibgq"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3p54"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86134"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd7s8"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnlan"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ehsx"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph2st"]
+atlas = ExtResource("1_t53lx")
+region = Rect2(576, 0, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef4gn"]
 atlas = ExtResource("5_cibgq")
 region = Rect2(0, 0, 32, 32)
@@ -243,32 +243,6 @@ region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q3p54"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cibgq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q3p54")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_86134")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fd7s8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xnlan")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ehsx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ph2st")
-}],
-"loop": false,
-"name": &"appearing",
-"speed": 8.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y0ehx")
@@ -418,6 +392,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cibgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3p54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86134")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd7s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnlan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ehsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph2st")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ef4gn")
 }, {
 "duration": 1.0,
@@ -470,7 +470,7 @@ run = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q3p54")
-animation = &"death"
+animation = &"spawn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
