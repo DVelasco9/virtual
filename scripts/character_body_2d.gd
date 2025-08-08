@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
 var facing_right = true
 var running = false
 var max_health := 100
@@ -15,7 +17,7 @@ var is_invulnerable := false
 var spawning := true
 var knockback_time := 0.2  
 var knockback_timer := 0.0
-
+var fruitcount = 0
 
 func take_damage(amount : int, from_position):
 	if is_dead or is_invulnerable:
@@ -142,6 +144,12 @@ func respawn():
 	spawning = false
 	#$CollisionShape2D.disabled = false
 
+func collectfruit(fruitType):
+	var auxstring = fruitType + "points"
+	var gainedpoints = GeneralRules[auxstring]
+	fruitcount += gainedpoints
+	print(fruitcount)
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

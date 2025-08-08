@@ -20,13 +20,20 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="healthbar"]
+[node name="HP" type="Label" parent="healthbar"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = -4.0
 offset_right = 117.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 25
 text = "HP"
+
+[node name="fruitpoints" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 28.0
+offset_right = 224.0
+offset_bottom = 51.0
 
 [node name="menu_button" type="Button" parent="."]
 anchors_preset = 1

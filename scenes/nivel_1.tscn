@@ -326,6 +326,7 @@ position = Vector2(80, -72)
 
 [node name="fruits2" parent="." instance=ExtResource("4_5hr2l")]
 position = Vector2(128, -160)
+fruitType = "banana"
 
 [node name="fruits3" parent="." instance=ExtResource("4_5hr2l")]
 position = Vector2(304, -112)

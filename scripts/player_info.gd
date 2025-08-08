@@ -7,11 +7,15 @@ extends CanvasLayer
 
 func _ready() -> void:
 	menupopup.visible = false
+	$fruitpoints.text = "puntuación: " + str(get_parent().fruitcount)
 	$healthbar.value = get_parent().current_health
 	
 func _process(delta: float) -> void:
 	$healthbar.value = get_parent().current_health
+	$fruitpoints.text = "puntuación: " + str(get_parent().fruitcount)
 
+
+#### MENU DE PAUSA ####
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = true
 	menupopup.visible = get_tree().paused
