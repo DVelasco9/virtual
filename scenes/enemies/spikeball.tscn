@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7l0oybuy40re"]
+
+[ext_resource type="Texture2D" uid="uid://btr7o187s5iri" path="res://Pixel Adventure 1/Free/Traps/Spiked Ball/Chain.png" id="1_e5l84"]
+[ext_resource type="Texture2D" uid="uid://cbqkagixwoqt1" path="res://Pixel Adventure 1/Free/Traps/Spiked Ball/Spiked Ball.png" id="2_hsrwi"]
+
+[node name="spikeball" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="chain" type="Sprite2D" parent="."]
+texture = ExtResource("1_e5l84")
+
+[node name="spike" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("2_hsrwi")

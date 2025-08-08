@@ -11,6 +11,23 @@ offset_right = 1152.0
 offset_bottom = 88.0
 color = Color(0, 0, 0, 0.384314)
 
+[node name="healthbar" type="ProgressBar" parent="."]
+offset_left = 19.0
+offset_top = 26.0
+offset_right = 161.0
+offset_bottom = 53.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="healthbar"]
+offset_left = 52.0
+offset_top = -4.0
+offset_right = 117.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 25
+text = "HP"
+
 [node name="menu_button" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
@@ -22,6 +39,7 @@ theme_override_font_sizes/font_size = 25
 text = "MENU"
 
 [node name="menuPopup" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="menuPopup"]
 anchors_preset = 8

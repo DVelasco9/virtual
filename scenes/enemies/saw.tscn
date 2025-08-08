@@ -101,7 +101,7 @@ target_position = Vector2(11, 0)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("3_3gw76")
-hurt = 1
+hurt = 10
 
 [node name="damage_zone" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7a3gq")

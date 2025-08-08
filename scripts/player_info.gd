@@ -2,11 +2,15 @@ extends CanvasLayer
 
 @onready var menupopup : Node2D = $menuPopup
 
+
+
+
 func _ready() -> void:
 	menupopup.visible = false
+	$healthbar.value = get_parent().current_health
 	
-	
-	
+func _process(delta: float) -> void:
+	$healthbar.value = get_parent().current_health
 
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = true

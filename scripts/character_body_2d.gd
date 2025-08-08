@@ -8,7 +8,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right = true
 var running = false
-var max_health := 3
+var max_health := 100
 var current_health := max_health
 var is_dead := false
 var is_invulnerable := false
