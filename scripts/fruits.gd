@@ -2,7 +2,7 @@
 extends Area2D
 
 
-@export_enum("apple","banana") var fruitType : String = "apple":
+@export_enum("apple","banana","collected") var fruitType : String = "apple":
 	set(value):
 		fruitType = value
 		$AnimatedSprite2D.animation = fruitType

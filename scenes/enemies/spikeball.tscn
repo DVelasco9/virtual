@@ -1,14 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7l0oybuy40re"]
+[gd_scene load_steps=10 format=3 uid="uid://b7l0oybuy40re"]
 
-[ext_resource type="Texture2D" uid="uid://btr7o187s5iri" path="res://Pixel Adventure 1/Free/Traps/Spiked Ball/Chain.png" id="1_e5l84"]
+[ext_resource type="Script" uid="uid://cgclopeehxfr1" path="res://scripts/enemies/spikeball.gd" id="1_hsrwi"]
 [ext_resource type="Texture2D" uid="uid://cbqkagixwoqt1" path="res://Pixel Adventure 1/Free/Traps/Spiked Ball/Spiked Ball.png" id="2_hsrwi"]
+[ext_resource type="PackedScene" path="res://scenes/others/chain.tscn" id="2_ys710"]
+[ext_resource type="Script" uid="uid://buasmbl7vjcgs" path="res://scripts/enemies/damage_area.gd" id="4_ys710"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmu1l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsrwi"]
+
+[sub_resource type="Animation" id="Animation_hsrwi"]
+resource_name = "regular_move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_ys710"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmu1l"]
+_data = {
+&"RESET": SubResource("Animation_ys710"),
+&"regular_move": SubResource("Animation_hsrwi")
+}
 
 [node name="spikeball" type="Node2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_hsrwi")
 
-[node name="chain" type="Sprite2D" parent="."]
-texture = ExtResource("1_e5l84")
+[node name="chain" parent="." instance=ExtResource("2_ys710")]
 
 [node name="spike" type="Sprite2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 15)
 texture = ExtResource("2_hsrwi")
+
+[node name="damage_area" type="Area2D" parent="spike"]
+position = Vector2(0, -15)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_ys710")
+hurt = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/damage_area"]
+position = Vector2(0, 15)
+shape = SubResource("CircleShape2D_lmu1l")
+debug_color = Color(0.999242, 0, 0.119282, 0.42)
+
+[node name="area_collision_map" type="Area2D" parent="spike"]
+position = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/area_collision_map"]
+position = Vector2(0, 15)
+shape = SubResource("CircleShape2D_hsrwi")
+
+[node name="raycast_floor_detection" type="RayCast2D" parent="."]
+target_position = Vector2(0, 30)
+
+[node name="safe_time" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationRotation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lmu1l")
+}
+
+[connection signal="body_entered" from="spike/damage_area" to="spike/damage_area" method="_on_body_entered"]
+[connection signal="body_entered" from="spike/area_collision_map" to="." method="_on_area_collision_map_body_entered"]
+[connection signal="timeout" from="safe_time" to="." method="_on_safe_time_timeout"]

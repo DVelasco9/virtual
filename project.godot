@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GeneralRules="*res://scripts/globals/general_rules.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 right={

@@ -23,7 +23,6 @@ func take_damage(amount : int, from_position):
 	if is_dead or is_invulnerable:
 		return
 	
-	
 	current_health -= amount 
 	current_health = clamp(current_health, 0, max_health)
 	
@@ -64,10 +63,6 @@ func die():
 	print("Animación terminada")
 	
 	get_tree().change_scene_to_file("res://scenes/muerte.tscn")
-
-
-
-
 
 func _ready() -> void:
 	add_to_group("player")
@@ -148,7 +143,6 @@ func collectfruit(fruitType):
 	var auxstring = fruitType + "points"
 	var gainedpoints = GeneralRules[auxstring]
 	fruitcount += gainedpoints
-	print(fruitcount)
 	
 
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8r2saoffky7"]
+
+[sub_resource type="GDScript" id="GDScript_7ec12"]
+script/source = "extends Node2D
+
+
+var send_player_to = Vector2()
+
+
+func _ready() -> void:
+	add_to_group(\"portal\")
+	await get_tree().process_frame 
+	find_other_portal()
+
+func find_other_portal():
+	var portals = get_tree().get_nodes_in_group(\"portal\")
+	for portal in portals:
+		if portal != self:
+			send_player_to = portal.global_position
+			print(\"El portal en\", global_position, \"detectó el otro en\", send_player_to)
+			
+
+func _on_area_portal_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group(\"player\"):
+		
+		if get_parent().get_node(\"virtual\").fruitcount >= 4: 
+			print(\"Teletransportando a\", send_player_to)
+			area.get_parent().position = send_player_to
+		else:
+			$need.text = \"Necesitas al menos 4 puntos para usar este portal\"
+			$Timer.start(3.0)
+			await $Timer.timeout
+			print(\"Necesitas al menos 5 puntos para usar este portal\")
+		
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ec12"]
+size = Vector2(4, 10)
+
+[node name="portal" type="Node2D"]
+script = SubResource("GDScript_7ec12")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = 9.0
+color = Color(1, 0.0117647, 1, 0.513726)
+
+[node name="area_portal" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_portal"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7ec12")
+debug_color = Color(0.72549, 0.47451, 0, 0.835294)
+
+[node name="need" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -51.0
+offset_right = 20.0
+offset_bottom = -28.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="area_portal" to="." method="_on_area_portal_area_entered"]

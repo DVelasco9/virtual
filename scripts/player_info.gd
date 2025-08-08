@@ -13,6 +13,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$healthbar.value = get_parent().current_health
 	$fruitpoints.text = "puntuación: " + str(get_parent().fruitcount)
+	var current_time = Time.get_datetime_dict_from_system()
+	if current_time.minute < 10:
+		$clock.text = str(current_time.hour) + ":0" + str(current_time.minute)
+	else:
+		$clock.text = str(current_time.hour) + ":" + str(current_time.minute)
 
 
 #### MENU DE PAUSA ####
