@@ -76,4 +76,5 @@ text = "LOAD ON CHECKPOINT"
 [connection signal="pressed" from="BACK TO MENU" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="RETRY" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="game_over" to="." method="_on_game_over_pressed"]
+[connection signal="pressed" from="checkpoint2" to="." method="_on_checkpoint_2_pressed"]
 [connection signal="pressed" from="checkpoint2" to="." method="_on_checkpoint_pressed"]

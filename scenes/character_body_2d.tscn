@@ -463,7 +463,7 @@ animations = [{
 size = Vector2(20, 24)
 
 [node name="virtual" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_yi2kj")
 move = 200.0
 jump = -400.0
@@ -471,12 +471,13 @@ run = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q3p54")
-animation = &"hit"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_t53lx")
 
