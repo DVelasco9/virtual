@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cbq7eu1qajj3d"]
+[gd_scene load_steps=72 format=3 uid="uid://cbq7eu1qajj3d"]
 
 [ext_resource type="Texture2D" uid="uid://cjfv7khvkp4jc" path="res://Pixel Adventure 1/Free/Main Characters/Appearing (96x96).png" id="1_t53lx"]
 [ext_resource type="Texture2D" uid="uid://ea1gsola7cym" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_ws0vm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://de4i2csf1ssig" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Jump (32x32).png" id="4_yi2kj"]
 [ext_resource type="Texture2D" uid="uid://4f6utbpm5bya" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Run (32x32).png" id="5_cibgq"]
 [ext_resource type="PackedScene" uid="uid://clnqhsa5ehy7e" path="res://scenes/player_info.tscn" id="9_cibgq"]
+[ext_resource type="Script" uid="uid://dnmcxkp66pj3l" path="res://scripts/others/game_over_screen.gd" id="10_mfdas"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ehx"]
 atlas = ExtResource("2_yi2kj")
@@ -493,3 +494,34 @@ shape = SubResource("RectangleShape2D_t53lx")
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_cibgq")
 debug_color = Color(0.776471, 0.439216, 0, 0.74902)
+
+[node name="game_over_screen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("10_mfdas")
+
+[node name="Label" type="Label" parent="game_over_screen"]
+offset_left = 427.0
+offset_right = 713.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="reintentar" type="Button" parent="game_over_screen"]
+offset_left = 464.0
+offset_top = 160.0
+offset_right = 732.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 50
+text = "TRY AGAIN"
+
+[node name="menu" type="Button" parent="game_over_screen"]
+offset_left = 511.0
+offset_top = 248.0
+offset_right = 669.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 50
+text = "MENU"
+
+[connection signal="pressed" from="game_over_screen/reintentar" to="game_over_screen" method="_on_reintentar_pressed"]
+[connection signal="pressed" from="game_over_screen/menu" to="game_over_screen" method="_on_menu_pressed"]

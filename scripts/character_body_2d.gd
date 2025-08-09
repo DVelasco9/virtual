@@ -62,10 +62,16 @@ func die():
 	await animation.animation_finished
 	print("Animación terminada")
 	
-	get_tree().change_scene_to_file("res://scenes/muerte.tscn")
+	get_tree().paused = true
+	$game_over_screen.visible = true
 
 func _ready() -> void:
 	add_to_group("player")
+		# Si hay un checkpoint guardado, aparecer ahí y restaurar puntos
+	if GameData.checkpoint_position != Vector2.ZERO:
+		global_position = GameData.checkpoint_position
+		fruitcount = GameData.score
+	
 	respawn()
 
 func _physics_process(delta: float) -> void:

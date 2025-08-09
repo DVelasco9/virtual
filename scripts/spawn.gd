@@ -2,7 +2,6 @@ extends Node2D
 
 var jugador = preload("res://scenes/character_body_2d.tscn")
 
-
 func _ready() -> void:
 	aparecer()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bamfeyx7p1ppx"]
+[gd_scene load_steps=21 format=4 uid="uid://bamfeyx7p1ppx"]
 
 [ext_resource type="Script" uid="uid://6m01ci72sir1" path="res://scripts/nivel_2.gd" id="1_57u30"]
 [ext_resource type="Texture2D" uid="uid://cg081eb66psp5" path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" id="1_umxjv"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bkjpcsvyv6v7e" path="res://Pixel Adventure 1/Free/New_BG/Layer_0000_9.png" id="13_73xse"]
 [ext_resource type="Texture2D" uid="uid://cxh8vah16a57u" path="res://Pixel Adventure 1/Free/New_BG/Captura de pantalla 2025-08-08 061257.png" id="14_hashw"]
 [ext_resource type="PackedScene" uid="uid://crb2c11aaxrhn" path="res://scenes/fruits.tscn" id="15_n4tvo"]
+[ext_resource type="PackedScene" uid="uid://ck22jrfe3dxqw" path="res://scenes/others/checkpoint.tscn" id="17_jrjjf"]
+[ext_resource type="PackedScene" uid="uid://jd4sl14ppge" path="res://scenes/enemies/saw_wall.tscn" id="19_c1a8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icgmx"]
 texture = ExtResource("1_umxjv")
@@ -388,3 +390,9 @@ position = Vector2(-129, -49)
 
 [node name="spawn_player" type="Marker2D" parent="."]
 position = Vector2(80, -21)
+
+[node name="saw_wall" parent="." instance=ExtResource("19_c1a8n")]
+position = Vector2(27, 47)
+
+[node name="checkpoint" parent="." instance=ExtResource("17_jrjjf")]
+position = Vector2(199, -176)
