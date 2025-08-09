@@ -455,8 +455,9 @@ var collectedpoints = 0
 ```
 ## VIDEOS
 
-
 https://github.com/user-attachments/assets/79d4886e-3da9-4952-9ed5-44239a54501e
+
+https://github.com/user-attachments/assets/f1a3651c-d2bb-45ac-8843-75e85653bc77
 
 
 
