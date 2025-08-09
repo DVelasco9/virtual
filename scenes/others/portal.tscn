@@ -21,14 +21,10 @@ func find_other_portal():
 func _on_area_portal_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group(\"player\"):
 		
-		if get_parent().get_node(\"virtual\").fruitcount >= 4: 
+		if get_parent().get_node(\"virtual\").fruitcount >= 0: 
 			
 			area.get_parent().position = send_player_to
-		else:
-			$need.text = \"Necesitas al menos 4 puntos para usar este portal\"
-			await get_tree().create_timer(5.0).timeout
-			$need.text = \"\"
-			
+		
 		
 "
 

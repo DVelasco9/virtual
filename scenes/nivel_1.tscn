@@ -342,16 +342,20 @@ script = ExtResource("19_5ruck")
 
 [node name="fruits" parent="cambio_nivel" instance=ExtResource("4_5hr2l")]
 position = Vector2(80, -72)
+fruit_id = "fruits"
 
 [node name="fruits2" parent="cambio_nivel" instance=ExtResource("4_5hr2l")]
 position = Vector2(128, -160)
 fruitType = "banana"
+fruit_id = "fruits2"
 
 [node name="fruits3" parent="cambio_nivel" instance=ExtResource("4_5hr2l")]
 position = Vector2(304, -112)
+fruit_id = "fruits3"
 
 [node name="fruits4" parent="cambio_nivel" instance=ExtResource("4_5hr2l")]
 position = Vector2(767, -32)
+fruit_id = "fruits4"
 
 [node name="portal" parent="." instance=ExtResource("7_67o6f")]
 position = Vector2(408, 8)
