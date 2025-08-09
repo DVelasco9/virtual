@@ -16,7 +16,7 @@ Plataformero
 <img width="352" height="176" alt="Terrain (16x16)" src="https://github.com/user-attachments/assets/c98a6fea-bda6-4b0d-9dc2-ce366fa1ac48" />
 
 ### TRAMPAS
-<img width="304" height="38" alt="On (38x38)" src="https://github.com/user-attachments/assets/e8a10e6a-baa1-4ce3-a0e5-8304a1779c72" />
+<img width="304" height="38" alt="On (38x38)" src="https://github.com/user-attachments/assets/e8a10e6a-baa1-4ce3-a0e5-8304a1779c72" />\
 
 <img width="28" height="28" alt="Spiked Ball" src="https://github.com/user-attachments/assets/8f494302-23e3-46a5-8a27-745cb8ddce2f" />
 
