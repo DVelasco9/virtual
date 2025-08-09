@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bamfeyx7p1ppx"]
+[gd_scene load_steps=24 format=4 uid="uid://bamfeyx7p1ppx"]
 
 [ext_resource type="Script" uid="uid://6m01ci72sir1" path="res://scripts/nivel_2.gd" id="1_57u30"]
 [ext_resource type="Texture2D" uid="uid://cg081eb66psp5" path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" id="1_umxjv"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ck22jrfe3dxqw" path="res://scenes/others/checkpoint.tscn" id="17_jrjjf"]
 [ext_resource type="PackedScene" uid="uid://jd4sl14ppge" path="res://scenes/enemies/saw_wall.tscn" id="19_c1a8n"]
 [ext_resource type="PackedScene" uid="uid://b7l0oybuy40re" path="res://scenes/enemies/spikeball.tscn" id="19_fcfse"]
+[ext_resource type="PackedScene" uid="uid://db870o3ekvotl" path="res://scenes/enemies/angry_pig.tscn" id="21_y7yxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icgmx"]
 texture = ExtResource("1_umxjv")
@@ -425,3 +426,6 @@ scale = Vector2(1, 1)
 [node name="spikeball4" parent="." instance=ExtResource("19_fcfse")]
 position = Vector2(344, -63)
 scale = Vector2(1, 1)
+
+[node name="angry_pig" parent="." instance=ExtResource("21_y7yxx")]
+position = Vector2(-286, -18)

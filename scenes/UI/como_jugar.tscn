@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbfug2xp3611y"]
+
+[ext_resource type="Script" uid="uid://m2vm386hq4bt" path="res://scripts/others/como_jugar.gd" id="1_dsto7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsto7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 139.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 25
+text = "MOVERSE: A/D"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 52.0
+offset_right = 144.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 25
+text = "CORRER: SHIFT"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 160.0
+offset_right = 759.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 25
+text = "Para pasar al siguiente nivel o ganar, recolecta todas las frutas"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 99.0
+offset_right = 193.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 25
+text = "SALTAR: SPACE "
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_right = 148.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
