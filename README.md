@@ -16,7 +16,8 @@ Plataformero
 <img width="352" height="176" alt="Terrain (16x16)" src="https://github.com/user-attachments/assets/c98a6fea-bda6-4b0d-9dc2-ce366fa1ac48" />
 
 ### TRAMPAS
-<img width="8" height="8" alt="Chain" src="https://github.com/user-attachments/assets/19fbc47e-f442-4087-95f8-68211af311ad" />
+<img width="304" height="38" alt="On (38x38)" src="https://github.com/user-attachments/assets/e8a10e6a-baa1-4ce3-a0e5-8304a1779c72" />
+
 <img width="28" height="28" alt="Spiked Ball" src="https://github.com/user-attachments/assets/8f494302-23e3-46a5-8a27-745cb8ddce2f" />
 
 ### FRUITS
@@ -458,3 +459,7 @@ var collectedpoints = 0
 Fue una experiencia interesante y desafiante, la verdad no puedo decir mucho porque el anterior juego hizo que este fuera mucho más facil, sin embargo me sirvio para darme cuenta lo dificil y tedioso que es ser un programador de videojuegos, porque si le mueves a algo lo otro ya salio mal, osea, muchas veces hay que modificar una y otra vez codigos que segun tu ya estaban bien hechos y funcionales
 
 PD: GODOT me va a provocar una psicocirugía
+
+## COMPRIMIDO DEL JUEGO
+[virtual_finished.zip](https://github.com/user-attachments/files/21699985/virtual_finished.zip)
+
