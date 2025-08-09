@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://crb2c11aaxrhn"]
+[gd_scene load_steps=47 format=3 uid="uid://c1gggt7s0nkvc"]
 
 [ext_resource type="Texture2D" uid="uid://coc63mj5n72rb" path="res://Pixel Adventure 1/Free/Items/Fruits/Apple.png" id="1_4b3k7"]
 [ext_resource type="Script" uid="uid://ppebxjnru0ct" path="res://scripts/fruits.gd" id="1_iuj4e"]

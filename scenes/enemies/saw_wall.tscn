@@ -1,39 +1,39 @@
-[gd_scene load_steps=15 format=3 uid="uid://beid0r3ubu7fq"]
+[gd_scene load_steps=15 format=3 uid="uid://jd4sl14ppge"]
 
-[ext_resource type="Texture2D" uid="uid://qae1kwtk305y" path="res://Pixel Adventure 1/Free/Traps/Saw/On (38x38).png" id="1_m7w0w"]
-[ext_resource type="Script" uid="uid://dade57dxns3qj" path="res://scenes/enemies/saw.gd" id="1_rg3af"]
-[ext_resource type="Script" uid="uid://b0lh5q25b4mjc" path="res://scripts/enemies/damage_saw.gd" id="3_3gw76"]
+[ext_resource type="Script" uid="uid://vob4bcdjbpbl" path="res://scripts/enemies/saw_wall.gd" id="1_6d4ja"]
+[ext_resource type="Texture2D" uid="uid://qae1kwtk305y" path="res://Pixel Adventure 1/Free/Traps/Saw/On (38x38).png" id="2_awkg5"]
+[ext_resource type="Script" uid="uid://b0lh5q25b4mjc" path="res://scripts/enemies/damage_saw.gd" id="3_lcas5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gw76"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(0, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7a3gq"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(38, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j103y"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(76, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx05h"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(114, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvuq1"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(152, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6h6f"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(190, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8xva"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(228, 0, 38, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5xwt"]
-atlas = ExtResource("1_m7w0w")
+atlas = ExtResource("2_awkg5")
 region = Rect2(266, 0, 38, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yiep7"]
@@ -74,9 +74,9 @@ size = Vector2(17, 3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_7a3gq"]
 radius = 20.0998
 
-[node name="saw" type="CharacterBody2D"]
+[node name="saw_wall" type="CharacterBody2D"]
 collision_layer = 4
-script = ExtResource("1_rg3af")
+script = ExtResource("1_6d4ja")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yiep7")
@@ -100,11 +100,15 @@ target_position = Vector2(11, 0)
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("3_3gw76")
+script = ExtResource("3_lcas5")
 hurt = 10
 
 [node name="damage_zone" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7a3gq")
 debug_color = Color(0.993569, 0.0740392, 5.77569e-07, 0.42)
+
+[node name="ray_wall_detection_2" type="RayCast2D" parent="."]
+position = Vector2(-14, -2)
+target_position = Vector2(-12, 0)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

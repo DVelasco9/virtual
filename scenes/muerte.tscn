@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6lefjeqrhuri"]
+[gd_scene load_steps=2 format=3 uid="uid://c881nksawp2hq"]
 
 [ext_resource type="Script" uid="uid://gytd0kwj18j6" path="res://scripts/muerte.gd" id="1_beg0p"]
 
@@ -76,5 +76,5 @@ text = "LOAD ON CHECKPOINT"
 [connection signal="pressed" from="BACK TO MENU" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="RETRY" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="game_over" to="." method="_on_game_over_pressed"]
-[connection signal="pressed" from="checkpoint2" to="." method="_on_checkpoint_2_pressed"]
 [connection signal="pressed" from="checkpoint2" to="." method="_on_checkpoint_pressed"]
+[connection signal="pressed" from="checkpoint2" to="." method="_on_checkpoint_2_pressed"]

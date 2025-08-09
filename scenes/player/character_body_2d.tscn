@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cbq7eu1qajj3d"]
+[gd_scene load_steps=71 format=3 uid="uid://cw2hj4mqasgqm"]
 
 [ext_resource type="Texture2D" uid="uid://cjfv7khvkp4jc" path="res://Pixel Adventure 1/Free/Main Characters/Appearing (96x96).png" id="1_t53lx"]
 [ext_resource type="Texture2D" uid="uid://ea1gsola7cym" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_ws0vm"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cy58lldjdaenu" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Idle (32x32).png" id="3_t53lx"]
 [ext_resource type="Texture2D" uid="uid://de4i2csf1ssig" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Jump (32x32).png" id="4_yi2kj"]
 [ext_resource type="Texture2D" uid="uid://4f6utbpm5bya" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Run (32x32).png" id="5_cibgq"]
-[ext_resource type="PackedScene" uid="uid://clnqhsa5ehy7e" path="res://scenes/player_info.tscn" id="9_cibgq"]
+[ext_resource type="PackedScene" uid="uid://d0f5eofbld577" path="res://scenes/player_info.tscn" id="9_cibgq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ehx"]
 atlas = ExtResource("2_yi2kj")
