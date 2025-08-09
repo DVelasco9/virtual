@@ -455,6 +455,12 @@ var collectedpoints = 0
 ```
 ## VIDEOS
 
+
+https://github.com/user-attachments/assets/79d4886e-3da9-4952-9ed5-44239a54501e
+
+
+
+
 ## COMENTARIO FINAL 
 Fue una experiencia interesante y desafiante, la verdad no puedo decir mucho porque el anterior juego hizo que este fuera mucho más facil, sin embargo me sirvio para darme cuenta lo dificil y tedioso que es ser un programador de videojuegos, porque si le mueves a algo lo otro ya salio mal, osea, muchas veces hay que modificar una y otra vez codigos que segun tu ya estaban bien hechos y funcionales
 
